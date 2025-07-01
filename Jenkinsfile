@@ -26,5 +26,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Success') {
+            steps {
+                echo ' Application successfully deployed to EKS!'
+                echo '🎉 Congrats Keerthivasan, your CI/CD works i have done a fantabolous job proud of myself '
+            }
+        }
     }
 }
+
