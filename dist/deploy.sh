@@ -4,4 +4,4 @@
 aws eks update-kubeconfig --region ap-south-1 --name trend-cluster
 
 # making the kubernetes manifest files work :)
-kubectl apply -f deployment.yml
+kubectl apply -f dist/deployment.yml

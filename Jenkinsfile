@@ -20,8 +20,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo 'Deploying to EKS...'
-                sh 'chmod +x dist/deploy.sh'
-                sh './dist/deploy.sh'
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-eks-cred']]) {
+                    sh 'chmod +x dist/deploy.sh'
+                    sh './dist/deploy.sh'
+                }
             }
         }
     }
