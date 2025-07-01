@@ -9,7 +9,7 @@ echo "Logging into Docker Hub..."
 docker login -u "$DOCKER_USERNAME" -p "kee@77189"
 
 echo "Building Docker image..."
-docker build -t $IMAGE_NAME:$IMAGE_TAG -f dist/Dockerfile .
+docker build -t $IMAGE_NAME:$IMAGE_TAG -f dist/Dockerfile dist/
 
 echo "Tagging image as latest..."
 docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_NAME:latest
